@@ -9,25 +9,33 @@ Sommiamo i due numeri
 
 // let per stabilire le cosa richiediamo al utente
 
- let userChoice = prompt("Scegli pari o dispari:");
- console.log(userChoice);
+let userChoice = prompt("Scegli pari o dispari:");
+console.log(userChoice);
 
 let userNumber = Number(prompt("Inserisci un numero da 1 a 5:"));
 console.log(userNumber);
 
 // let per generare un numero random da 1 a 5
- let randomNumber = Math.floor(Math.random() * 5) + 1;
- console.log(randomNumber);
+function randomNumber() {
+    return Math.floor(Math.random() * 5) + 1;
+   
+}
+ console.log(randomNumber());
+//facciamo la somma dei numeri (dal utente e il random)
 
- //facciamo la somma dei numeri (dal utente e il random)
-
-let sum = userNumber + randomNumber;
-console.log(sum);
+function sum() {
+  return userNumber + randomNumber();
+}
+console.log(sum());
 
 
 // Verifichiamo se la somma è pari o dispari
-let evenOrOdd = sum % 2 === 0;
-console.log(evenOrOdd);
+function evenOrOdd() {
+   return sum % 2 === 0;
+} 
+console.log(evenOrOdd());
+
+
 //Dichiariamo chi ha vinto con la condizione if
 if ((userChoice === "pari" && evenOrOdd) || (userChoice === "dispari" && !evenOrOdd)) {
     console.log("You win!");
