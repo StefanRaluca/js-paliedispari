@@ -22,37 +22,41 @@ console.log(userNumber);
  */
 function randomNumber() {
     return Math.floor(Math.random() * 5) + 1;
-   
 }
-randomNumber()
- console.log(randomNumber());
+let myRandomNumber = randomNumber();
+console.log(myRandomNumber); // 
 
 //facciamo la somma dei numeri (dal utente e il random)
 /**
  * 
  * @returns {number}
  */
-function sum() {
-  return userNumber + randomNumber();
+function sum(num1, num2) {
+  return num1 + num2;
 }
-console.log(sum());
-sum()
+
+let sumNumber = sum(userNumber, myRandomNumber);
+console.log(sumNumber);
+
 
 // Verifichiamo se la somma è pari o dispari
 /**
- * 
+ * True se e' pari, false se e' dispari
  * @returns {boolean}
  */
-function evenOrOdd() {
-   return sum % 2 === 0;
+function evenOrOdd(number) {
+   return number % 2 === 0;
 } 
-console.log(evenOrOdd());
-
-evenOrOdd()
+let even_or_odd = evenOrOdd(sumNumber);
+console.log(even_or_odd);
 
 //Dichiariamo chi ha vinto con la condizione if
-if ((userChoice === "pari" && evenOrOdd) || (userChoice === "dispari" && !evenOrOdd)) {
-    console.log("You win!");
+
+// pari, 4 = true - (userChoice === "pari" && evenOrOdd(sumNumber))
+// dispari, 3 = true - (userChoice === "dispari" && !evenOrOdd(sumNumber))
+
+if ((userChoice === "pari" && even_or_odd) || (userChoice === "dispari" && !even_or_odd)) {
+    console.log(`You win! Your choice is ${userChoice} and number ${sumNumber}`);
 } else {
     console.log("You lost!");
 }
